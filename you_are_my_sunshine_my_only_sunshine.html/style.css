@@ -1,0 +1,13 @@
+*, * ::after, * ::before {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    
+}
+.centered-image {
+    display: block; /* Make the image a block-level element */
+    margin-left: auto; /* Distribute left margin to the left side */
+    margin-right: auto; /* Distribute right margin to the right side */
+}
+body {
+    background-color: forestgreen;
+}
