@@ -1,13 +1,47 @@
-*, * ::after, * ::before {
-    box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
-    
+/***** RESET *****/
+*{box-sizing:border-box;margin:0;padding:0;user-select:none}
+html,body{height:100%}
+body{
+  display:flex;
+  flex-direction:column;
+  background:#70c5ce;
+  font-family:sans-serif;
 }
-.centered-image {
-    display: block; /* Make the image a block-level element */
-    margin-left: auto; /* Distribute left margin to the left side */
-    margin-right: auto; /* Distribute right margin to the right side */
+
+/***** HEADER *****/
+header{background:#b4667e;color:#fff;padding:10px 20px;text-align:center}
+header nav a{color:#fff;margin:0 10px;text-decoration:none}
+header nav a:hover{text-decoration:underline}
+
+/***** CANVAS *****/
+#gameCanvas{
+  flex:1;               /* take remaining vertical space */
+  width:100vw;          /* always full width */
+  background:#fff url("sky.jpeg") center/cover no-repeat;
+  display:block;
+  border:2px solid #000;
 }
-body {
-    background-color: forestgreen;
+
+/***** SCORE (fixed overlay) *****/
+#scoreBoard{
+  position:fixed;
+  bottom:16px;left:50%;transform:translateX(-50%);
+  font-size:2rem;font-weight:700;color:#fff;
+  text-shadow:2px 2px 4px #000;
+  pointer-events:none;
 }
+
+/***** START OVERLAY *****/
+#startScreen{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,.6);
+  display:flex;align-items:center;justify-content:center;
+  z-index:1000;
+}
+#startBtn{
+  padding:14px 32px;font-size:1.5rem;font-weight:700;
+  color:#fff;background:#ff9800;border:none;border-radius:8px;cursor:pointer;
+  transition:transform .15s ease;
+}
+#startBtn:hover{transform:scale(1.05)}
+#startBtn:active{transform:scale(.95)}
